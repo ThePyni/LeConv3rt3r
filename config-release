@@ -1,5 +1,5 @@
-default-ip                      : 
-default-port                    : 
+default-ip                      : auto
+default-port                    : auto
 
 //Mongo
 
