@@ -1,0 +1,19 @@
+{
+  "name": "LeConv3rt3r",
+  "version": "1.0.0",
+  "description": "Web Converter",
+  "main": "release.js",
+  "dependencies": {
+    "coucher": "^2.0.8",
+    "mongodb": "^1.4.23",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "total.js": "^1.6.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node release.js"
+  },
+  "author": "ThePyni",
+  "license": "ISC"
+}
