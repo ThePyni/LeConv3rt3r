@@ -1,0 +1,17 @@
+// Both configuration (debug/release)
+
+name                            : LeConv3rt3r
+author                          : ThePyni
+version                         : 1.01
+secret                          : secret-key-for-web
+
+// Mail settings
+mail.smtp                       : smtp.yourwebsite.com
+mail.smtp.options               : {"secure":false,"port":25,"user":"","password":"","timeout":10000}
+mail.address.from               : your@yourwebsite.com
+mail.address.reply              : your@yourwebsite.com
+mail.address.bcc                :
+
+//Mongo
+
+database						: mongodb://thepyni:convert@ds063160.mongolab.com:63160/conv3rter

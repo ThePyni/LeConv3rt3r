@@ -1,0 +1,126 @@
+@{layout('')}
+
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>LeConv3rter LogIn</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+			<h1><a>LeConv3rt3r</a> LogIn</h1>
+				<nav id="nav">
+					<ul>
+						<li>
+							
+							<a href="" class="icon fa-angle-down">More</a>
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li>
+									<a href="">Twitter</a>
+									<ul>
+										<li><a href="https://twitter.com/MikelPineda">Mikel "ThePyni" Pineda</a></li>
+										<li><a href="https://twitter.com/dipina">Diego "Dipina" Ipiña</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="signup" class="button">Sign Up</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="container small">
+		
+				<section class="box special">
+					<header>
+					<h2>Log In</h2>
+					<p>Remember to register before logging in.</p>
+				</header>
+				</section>
+						
+				<section class="box">
+					<h3>Log in to start awesome conversions!</h3>
+					<form method="post" action="#" id='f'>
+						<div class="row uniform half collapse-at-2">
+							<div class="6u">
+								<input type="text" name="name" id="name" value="" placeholder="Name" required/>
+							</div>
+							<div class="6u">
+								<input type="password" name="password" id="password" value="" placeholder="Password" required/>
+							</div>
+						</div>
+						<div class="row uniform">
+							<div class="12u">
+								<ul class="actions align-center">
+									<input type="submit" value="Login" onclick="send(); validateForm()">
+								</ul>
+							</div>
+						</div>
+						<div>
+							@{foreach m in model}
+								@{if m === null}
+									<div>Wrong User or Password!</div>
+								@{endif}
+							@{end}
+						</div>
+						<div id="error"></div>
+					</form>
+				</section>
+				<script type="text/javascript">
+					function send() { $.post('/?ts=' + new Date().getTime(), $('#f').serialize()); };
+					$(document).ready(send);
+				</script>
+				<script type="text/javascript">
+					function validateForm() {
+					  var isValid = true;
+					  $('.required input').each(function() {
+					    if ( $(this).val() === '' )
+					        isValid = false;
+					  });
+
+					  if (!isValid){
+					  	document.getElementById("error").innerHTML="Fill all the fields!";
+					  }
+
+					  return isValid;
+					}
+				</script>
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/MikelPineda" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://www.facebook.com/mikel.pinedasantiago" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="https://github.com/ThePyni" class="icon fa-github"><span class="label">Github</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+	</body>
+</html>
