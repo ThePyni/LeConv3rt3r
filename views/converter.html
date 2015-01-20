@@ -93,13 +93,13 @@
 						<div class="12u">
 							<ul class="actions">
 								<!--<li><input type="reset" value="Convert" onclick="hideresult();var x = processInputs(); send(x); enableAll()"; /></li>-->
-								<li><input type="reset" value="Convert" onclick="hideresult(); processInputs(); enableAll()"; /></li>
+								<li><input type="reset" value="Convert" onclick="enableAll(); hideresult(); processInputs()"; /></li>
 								<li><input type="reset" value="Reset" class="alt" onclick="enableAll()" /></li>
 							</ul>
 						</div>
 					</div>
 					<div id="result" style="display:none;" class="row uniform">
-						<span id="conversionresult"></span>
+						<p><span id="conversionresult"></span></p>
 					</div>
 				</form>
 			</section>
@@ -124,7 +124,6 @@
 			};
 			$(document).ready(send);
 		</script> -->
-			
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">

@@ -26,9 +26,11 @@ function processInputs() {
     
             data = 'dec=' + dec + '&bin=' + bin + '&hex=' + hex + '&oct=' + oct;
     
-            //$.post('/?ts=' + new Date().getTime(), data);
+            $.post('/converter', data);
     
             document.getElementById("conversionresult").innerHTML="The conversion is: Decimal " + dec + " Binary: " + bin + " Hexadecimal: " + hex + " Octal: " + oct;
+
+            
 
             //return data;
 
@@ -46,6 +48,10 @@ function processInputs() {
             dec = convertBase(hex).from(16).to(10).toUpperCase();
             oct = convertBase(hex).from(16).to(8);
 
+            data = 'dec=' + dec + '&bin=' + bin + '&hex=' + hex + '&oct=' + oct;
+    
+            $.post('/converter', data);
+
             document.getElementById("conversionresult").innerHTML="The conversion is: Decimal " + dec + " Binary: " + bin + " Hexadecimal: " + hex + " Octal: " + oct;
         } else {
             document.getElementById("conversionresult").innerHTML="Enter a valid hexadecimal number";
@@ -60,6 +66,10 @@ function processInputs() {
             hex = convertBase(bin).from(2).to(16).toUpperCase();
             oct = convertBase(bin).from(2).to(8);
 
+            data = 'dec=' + dec + '&bin=' + bin + '&hex=' + hex + '&oct=' + oct;
+    
+            $.post('/converter', data);
+
             document.getElementById("conversionresult").innerHTML="The conversion is: Decimal " + dec + " Binary: " + bin + " Hexadecimal: " + hex + " Octal: " + oct;
         } else {
             document.getElementById("conversionresult").innerHTML="Enter a valid binary number";
@@ -73,6 +83,10 @@ function processInputs() {
             bin = convertBase(oct).from(8).to(2);
             hex = convertBase(oct).from(8).to(16).toUpperCase();
             dec = convertBase(oct).from(8).to(10);
+
+            data = 'dec=' + dec + '&bin=' + bin + '&hex=' + hex + '&oct=' + oct;
+    
+            $.post('/converter', data);
 
             document.getElementById("conversionresult").innerHTML="The conversion is: Decimal " + dec + " Binary: " + bin + " Hexadecimal: " + hex + " Octal: " + oct;
         } else {

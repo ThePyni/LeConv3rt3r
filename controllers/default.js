@@ -4,7 +4,7 @@ exports.install = function(framework) {
 	framework.route('login', json_login, ['post']);
 	framework.route('lastconversions', view_lastconversions);
 	framework.route('converter', view_converter);
-	framework.route('converter', json_converter, ['post']);
+	framework.route('/converter/', json_converter, ['post']);
 	framework.route('signup', view_signup);
 	framework.route('signup', json_signup, ['post']);
 };
@@ -45,7 +45,7 @@ function view_lastconversions() {
 
     var conversions = DATABASE('conversions');
 
-    conversions.find({}).limit(10).toArray(function(err, docs) {
+    conversions.find({}).limit(15).toArray(function(err, docs) {
         self.view('lastconversions', docs);
     });
 }
@@ -58,14 +58,11 @@ function view_converter() {
 function json_converter() {
 
 	var self = this;
-	
-	//console.log('Saving conversion...');
 	console.log(self.post);
-	self.redirect('lastconversions');
-	//self.view('converter');
-	//var conversions = DATABASE('conversions');	
+	var conversions = DATABASE('conversions');	
 
-	//conversions.insert({dec: self.post.dec, bin: self.post.bin, hex: self.post.hex, oct: self.post.oct }, {w:1}, function(err, objects) {});
+	conversions.insert({dec: self.post.dec, bin: self.post.bin, hex: self.post.hex, oct: self.post.oct }, {w:1}, function(err, objects) {});
+	self.plain();
 }
 
 function view_signup() {
